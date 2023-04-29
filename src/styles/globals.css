@@ -2,6 +2,39 @@
 @tailwind components;
 @tailwind utilities;
 
+
+
+@layer components{
+  .btn-cta{
+      @apply lg:mt-10 lg:h-[56px] lg:w-[172px] bg-orange-1 rounded-full text-white font-semibold text-center uppercase self-center lg:self-start mt-7 text-sm w-[162px] h-[50px] hover:text-black;
+  }
+  .cardsPromo {
+    @apply grid grid-cols-1  lg:grid-cols-2  lg:my-[5rem] gap-6 relative my-20;
+  }
+  .cardsPromo__child {
+    @apply relative mx-2 lg:mx-auto;
+  }
+  .cardsPromo__child--images {
+    @apply rounded-xl md:mx-auto;
+  }
+  .cardsPromo__child--content {
+    @apply absolute top-[20%] left-[50%] lg:top-[24%] lg:left-[20.3rem] z-[999];
+  }
+  .cardsPromo__child--content h3{
+    @apply text-2xl lg:text-5xl font-bold;
+  }
+}
+
+@import url('../../node_modules/owl.carousel/dist/assets/owl.carousel.min.css');
+@import url('../../node_modules/owl.carousel/dist/assets/owl.theme.default.min.css');
+
+@import url('https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Delius+Unicase:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700;800&display=swap');
+
+
+
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 214, 219, 220;
@@ -18,10 +51,22 @@
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  font-family: 'Open Sans', sans-serif;
+  overflow-x: hidden;
+}
+
+.owl-nav{
+  display: inherit !important;
+}
+
+.bg-food-menu::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: -webkit-linear-gradient(right bottom, rgba(2, 11, 25, 0.19), rgba(2, 6, 13, 0.58), rgba(2, 6, 16, 0.57), rgba(3, 6, 28, 0.49), rgba(0, 0, 10, 0.4)) !important;
+  background-image: linear-gradient(to left top, rgba(2, 11, 25, 0.19), rgba(2, 6, 13, 0.58), rgba(2, 6, 16, 0.57), rgba(3, 6, 28, 0.49), rgba(0, 0, 10, 0.4)) !important;
+  z-index: -1;
 }
